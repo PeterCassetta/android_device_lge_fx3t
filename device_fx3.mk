@@ -14,8 +14,9 @@ else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
+# Recovery
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
+	$(LOCAL_PATH)/recovery/fstab.fx3:recovery/root/fstab.fx3
 
 $(call inherit-product, build/target/product/full.mk)
 
