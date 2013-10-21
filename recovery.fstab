@@ -1,11 +1,19 @@
-# mount point	fstype		device			[device2]
+# Android fstab file.
+#<src>                                         <mnt_point>  <type>  <mnt_flags and options>  <fs_mgr_flags>
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-/boot		emmc		/dev/block/mmcblk0p9
-/cache		ext4		/dev/block/mmcblk0p16
-/data		ext4		/dev/block/mmcblk0p21
-/misc		emmc		/dev/block/mmcblk0p8
-/recovery	emmc		/dev/block/mmcblk0p17
-/system		ext4		/dev/block/mmcblk0p14
-/emmc		vfat		/dev/block/mmcblk0p20	/dev/block/mmcblk0
-/sdcard		vfat		/dev/block/mmcblk1p1	/dev/block/mmcblk1
-/sd-ext     	ext4		/dev/block/mmcblk1p2
+/dev/block/platform/msm_sdcc.1/by-name/system       /system         ext4    ro,barrier=1                                                    wait
+/dev/block/platform/msm_sdcc.1/by-name/cache        /cache          ext4    noatime,nosuid,nodev,barrier=1,data=ordered                     wait,check
+/dev/block/platform/msm_sdcc.1/by-name/userdata     /data           ext4    noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc     wait,check,encryptable=/dev/block/platform/msm_sdcc.1/by-name/metadata
+/dev/block/platform/msm_sdcc.1/by-name/boot         /boot           emmc    defaults                                                        defaults
+/dev/block/platform/msm_sdcc.1/by-name/recovery     /recovery       emmc    defaults                                                        defaults
+
+## External SD
+/devices/platform/msm_sdcc.3/mmc_host               /external_sd    auto    defaults    voldmanaged=sdcard:auto
+
+## USB Storage
+/devices/platform/msm_hsusb_host/usb        /storage/usbdisk0       auto    defaults    voldmanaged=sda:auto
+
+
+
