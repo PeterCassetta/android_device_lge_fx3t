@@ -28,7 +28,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
 TARGET_PREBUILT_KERNEL := device/lge/fx3/kernel
 
-TARGET_KERNEL_CONFIG := fx3_tmo_defconfig
+TARGET_KERNEL_CONFIG := fx3_tmus_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/fx3
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
 
