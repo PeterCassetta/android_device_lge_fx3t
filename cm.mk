@@ -8,7 +8,7 @@ PRODUCT_RELEASE_NAME := fx3t
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/lge/fx3/device_fx3t.mk)
+$(call inherit-product, device/lge/fx3t/device_fx3t.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := fx3t

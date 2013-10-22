@@ -5,7 +5,7 @@ TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # inherit from the proprietary version
--include vendor/lge/fx3/BoardConfigVendor.mk
+-include vendor/lge/fx3t/BoardConfigVendor.mk
 
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
@@ -26,7 +26,7 @@ BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
-TARGET_PREBUILT_KERNEL := device/lge/fx3/kernel
+TARGET_PREBUILT_KERNEL := device/lge/fx3t/kernel
 
 TARGET_KERNEL_CONFIG := fx3_tmus_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/fx3
