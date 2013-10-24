@@ -17,4 +17,3 @@ dd if=/dev/zero of=/dev/block/platform/msm_sdcc.1/by-name/misc seek=64 count=20 
 
 # Tell us that it worked!
 #echo "I:LGE MISC flag reset" >> /cache/recovery/log
-mount /external_sd
